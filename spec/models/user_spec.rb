@@ -25,7 +25,7 @@ describe User do
       end
 
       it "is invalid without an avatar_url" do
-        user = User.new(username: 'sam', email: 'sam@sam.com', password: 'sam123'
+        user = User.new(username: 'sam', email: 'sam@sam.com', password: 'sam123',
           about: "This is a sample about me snippet.", cover_letter: "This is a long letter.")
 
         expect(user).to be_invalid
@@ -45,8 +45,8 @@ describe User do
         expect(user).to be_invalid
       end
 
-      it "has a unique name" do
-        create(:user, name: "Taken")
+      it "has a unique username" do
+        create(:user, username: "Taken")
         user = User.new(name: "Taken")
 
         expect(user).to be_invalid
