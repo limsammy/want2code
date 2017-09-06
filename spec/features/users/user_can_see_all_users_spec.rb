@@ -12,6 +12,7 @@ describe "User creates a new user profile" do
     visit '/users'
 
     save_and_open_page
+    
     expect(page).to have_content("User_1")
     expect(page).to have_content("User_2")
     expect(page).to have_content("User_3")
