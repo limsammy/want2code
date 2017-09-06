@@ -47,7 +47,7 @@ describe User do
 
       it "has a unique username" do
         create(:user, username: "Taken")
-        user = User.new(name: "Taken")
+        user = User.new(username: "Taken")
 
         expect(user).to be_invalid
       end
