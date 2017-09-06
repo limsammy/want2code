@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-  has_many :skills
+  validates :password, :avatar_url, :about, :cover_letter, presence: true
+  validates :username, :email, presence: true, uniqueness: true
 end
