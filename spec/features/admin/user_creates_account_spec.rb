@@ -10,7 +10,7 @@ RSpec.feature "User creates a new account" do
     visit 'users/new'
     fill_in "user[username]", with: user_attributes[:username]
     fill_in "user[password]", with: user_attributes[:password]
-    click_on "Create Account"
+    click_on "Skip"
     
     user = User.last
 
