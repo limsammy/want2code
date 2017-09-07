@@ -1,7 +1,7 @@
 class SkillsController < ActionController::Base
   def new
-    user = User.find(params[:user_id])
-    @skill = user.skills.new
+    @user = User.find(params[:user_id])
+    @skill = @user.skills.new
   end
 
   def create
