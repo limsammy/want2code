@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @skill = @user.skills.new
   end
 
   def create
@@ -13,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:message] = "#{@user.username}'s profile has been created"
       @user.skills.create
-      redirect_to new_user_skill_path
+      redirect_to new_user_skill_path(@user)
     else
       flash[:message] = "User Profile not created"
       redirect_to new_user_path
@@ -22,6 +21,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @skill = Skill.new
+    @skills = @user.skills.all
   end
 
   def edit

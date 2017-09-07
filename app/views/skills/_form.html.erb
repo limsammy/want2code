@@ -1,4 +1,6 @@
-<%= simple_form_for @skill do |f| %>
+<%= simple_form_for(Skill.new, :url => { :action => "create" })  do |f| %>
   <%= f.input :name, label: 'Skill Name ' %>
   <%= f.input :level, label: "Skill Level ", collection: ["Beginner","Proficient", "Intermediate", "Advanced", "Expert"], include_blank: false, include_hidden: false %>
+
+  <%= f.submit %>
 <% end %>

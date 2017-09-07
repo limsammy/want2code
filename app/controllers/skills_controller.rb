@@ -1,4 +1,4 @@
-class SkillController < ActionController::Base
+class SkillsController < ActionController::Base
   def new
     user = User.find(params[:user_id])
     @skill = user.skills.new
@@ -6,10 +6,18 @@ class SkillController < ActionController::Base
 
   def create
     user = User.find(params[:user_id])
-    if user.skills.save
-      flash[:message] = "#{user.skills.last.name} skill has been created!"
+    @skill = user.skills.new(skill_params)
+    if @skill.save
+      flash[:message] = "#{@skill.name} skill has been created!"
+      redirect_to user_path(user)
     else
-      redirect_to new_skill_path
+      redirect_to new_user_skill_path
     end
+  end
+
+  private
+
+  def skill_params
+    params.require(:skill).permit(:name, :level)
   end
 end
