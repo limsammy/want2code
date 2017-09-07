@@ -18,6 +18,6 @@ class SkillsController < ActionController::Base
   private
 
   def skill_params
-    params.require(:skill).permit(:name, :level)
+    params.require(:skill).permit(:name, :level, :user)
   end
 end
