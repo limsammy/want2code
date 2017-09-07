@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   end
 
   root to: "home#index"
-  get '/login' to: "sessions#new"
-  post '/login' to: "sessions#create"
+  get '/login', to: "sessions#new"
+  post '/login', to: "sessions#create"
 end
