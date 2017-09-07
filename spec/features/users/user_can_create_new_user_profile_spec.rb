@@ -14,7 +14,7 @@ describe "User creates a new user profile" do
     fill_in "user[state]", with: "Colorado"
     click_button "Create"
 
-    expect(current_path).to eq("/users/1")
+    expect(current_path).to eq("/users/#{User.last.id}")
 
     expect(page).to have_content("JohnDoe")
     expect(page).to have_content("email@email.com")
