@@ -1,4 +1,4 @@
-<%= form_with @skill do |f| %>
-  <%= f.textfield :name %>
-  <%= f.select(:level, ['Item 1', ...], {}, { :class => 'my_style_class' }) %>
+<%= simple_form_with @skill do |f| %>
+  <%= f.textfield :name, label: 'Skill Name' %>
+  <%= f.input :skill, :label => "Skill Level", :collection => ["Beginner","Proficient", "Intermediate", "Advanced", "Expert"] %>
 <% end %>
