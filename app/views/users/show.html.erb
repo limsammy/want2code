@@ -12,5 +12,7 @@ State: <%= @user.state %>
 <h4>All Skills for <strong><%= @user.username %></strong></h4>
 <%= render partial: "skills/skill", collection: @user.skills %>
 
-<small> <%= link_to "Delete User", user_path(@user), method: :delete %> </small>
-
+<% if current_user.role == 'admin' %>
+  <small> <%= link_to "Delete User", user_path(@user), method: :delete %> </small>
+<% end %>
+<small> <%= link_to "Edit", user_path(@user) %> </small>
