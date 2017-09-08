@@ -89,6 +89,15 @@ html {
   width: 200px;
   height: 200px;
 }
+.user-show-avatar {
+  /*height: 200px;*/
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+.grey-back-header {
+  background-color: lightgray;
+}
 
 
 
