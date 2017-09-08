@@ -21,7 +21,50 @@ html {
 .logo-icon {
   font-size: 30px;
 }
-
 .message {
   color: red;
+}
+.brand-icon {
+  padding-top: 3px;
+  font-size: 20px;
+}
+.log-button {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 7px;
+}
+.nav-click {
+  font-size: 20px;
+}
+.navbar-brand {
+  font-size: 28px;
+  font-weight: 300;
+  padding-top:10px;
+  letter-spacing: -1px;
+}
+.navbar {
+  border-radius: 0px;
+}
+.about-pan {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.about-title {
+  height: 90px;
+  opacity: 0.8;
+  background-image: url(http://i.imgur.com/563aSGJ.jpg);
+  background-size: cover;
+}
+.about-heading {
+  padding: 0px;
+}
+.about-header-text {
+  /*text-align: center;*/
+  color: white;
+  font-weight: bolder;
+  font-size: 50px;
+  margin-top: 0px;
+  margin-left: 10px;
+  padding-top: 10px;
+  text-shadow: -3px 3px #000000
 }
