@@ -19,8 +19,12 @@
         <li><a href="#">Stuff</a></li>
         <li><a href="#">Things</a></li>
         <li><a href="#">Items</a></li>
-        <a class="waves-effect waves-light btn-large"><i class="material-icons right">account_box</i>Login</a>
-        <a class="waves-effect waves-light btn-large"><i class="material-icons right">exit_to_app</i>Logout</a>
+
+        <% if !logged_in? %>
+          <a href='/login' class="waves-effect waves-light btn-large"><i class="material-icons right">account_box</i>Login</a>
+        <% else %>
+          <a href="/logout" class="waves-effect waves-light btn-large" data-method='delete'><i class="material-icons right">exit_to_app</i>Logout</a>
+        <% end %>
 
       </ul>
     </div>
