@@ -1,0 +1,22 @@
+<h4>Admin Show Page</h4>
+
+Name: <%= @user.username %>
+Email: <%= @user.email %>
+About: <%= @user.about %>
+Cover Letter: <%= @user.cover_letter %>
+City: <%= @user.city %>
+State: <%= @user.state %>
+
+<h4>Friends</h4>
+<% @user.friends do |friend| %>
+  <p><%= friend.username %></p>
+<% end %>
+
+<h4>Create a Skill</h4>
+<%= render partial: "skills/form" %>
+
+<br/>
+<h4>All Skills for <strong><%= @user.username %></strong></h4>
+<%= render partial: "skills/skill", collection: @user.skills %>
+
+<small> <%= link_to "Delete User", admin_user_path(@user), method: :delete %> </small>
