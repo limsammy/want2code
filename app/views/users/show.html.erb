@@ -1,28 +1,45 @@
-Name: <%= @user.username %>
-Email: <%= @user.email %>
-About: <%= @user.about %>
-Cover Letter: <%= @user.cover_letter %>
-City: <%= @user.city %>
-State: <%= @user.state %>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-3">
+    <img class="user-show-avatar" src="<%= @user.avatar_url %>" alt="">
+    <h1><%= @user.username %></h1>
+    <p>Email: <%= @user.email %></p>
+    <p>City: <%= @user.city %></p>
+    <p>State: <%= @user.state %></p>
 
-<% if @user.id == current_user.id %>
-  <h4>Create a Skill</h4>
-  <%= render partial: "skills/form" %>
-<% end %>
+  </div>
+  <div class="col-md-4">
+    <h3 class="grey-back-header">About: </h3>
+    <p><%= @user.about %></p>
+    <h3 class="grey-back-header">Cover Letter: </h3>
+    <p><%= @user.cover_letter %></p>
+    <small> <%= link_to "Edit", user_path(@user) %> </small>
+  </div>
 
-<h4>Friends</h4>
-<% @user.friends do |friend| %>
-  <p><%= friend.username %></p>
-<% end %>
+  <div class="col-md-3">
 
-<br/>
-<h4>All Skills</h4>
-<%= render partial: "skills/skill", collection: @user.skills %>
+    <h3 class="grey-back-header">All Skills</h3>
+    <%= render partial: "skills/skill", collection: @user.skills %><br>
 
-<% if Friendship.where("friend_id = ? OR user_id = ?", current_user.id, @user.id) %>
-	<%= link_to "Add Friend", new_user_friendship_path(@user) %>
-<% else %>
-	<p>Friend added!</p>
-<% end %>
+    <% if @user.id == current_user.id %>
+    <h3 class="grey-back-header">Create a Skill</h3>
+    <%= render partial: "skills/form" %>
+    <% end %><br>
 
-<small> <%= link_to "Edit", user_path(@user) %> </small>
+    <h3 class="grey-back-header">Friends</h3>
+    <% @user.friends do |friend| %>
+    <p><%= friend.username %></p>
+    <% end %>
+
+    <br/>
+
+    <% if Friendship.where("friend_id = ? OR user_id = ?", current_user.id, @user.id) %>
+    <%= link_to "Add Friend", new_user_friendship_path(@user) %>
+    <% else %>
+    <p>Friend added!</p>
+    <% end %>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
