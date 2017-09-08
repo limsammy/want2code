@@ -10,6 +10,11 @@ State: <%= @user.state %>
   <%= render partial: "skills/form" %>
 <% end %>
 
+<h4>Friends</h4>
+<% @user.friends do |friend| %>
+  <p><%= friend.username %></p>
+<% end %>
+
 <br/>
 <h4>All Skills</h4>
 <%= render partial: "skills/skill", collection: @user.skills %>
