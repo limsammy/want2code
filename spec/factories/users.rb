@@ -1,10 +1,10 @@
 require 'faker'
 FactoryGirl.define do
   factory :user do
-    username Faker::Internet.unique.user_name
+    username Faker::Internet.user_name
     password Faker::Internet.password
     avatar_url Faker::Avatar.image
-    email Faker::Internet.unique.email
+    email Faker::Internet.email
     about "MyText"
     cover_letter "MyText"
     linkedin "MyString"
