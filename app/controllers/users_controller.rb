@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    binding.pry
     if @user.save
       session[:user_id] = @user.id
       flash[:message] = "#{@user.username}'s profile has been created"

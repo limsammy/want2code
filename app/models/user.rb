@@ -6,6 +6,11 @@ class User < ApplicationRecord
 
   has_many :friendships, :foreign_key => "user_id", :class_name => "Friendship"
   has_many :friends, :through => :friendships
+  after_initialize :init
+
+  def init
+    self.role ||= 0.0
+  end
 
   enum role: %w(default admin)
 end

@@ -24,9 +24,14 @@
             <li><a class="nav-click" href="/about">About</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a class="nav-click" href="#">My Profile</a></li>
-            <a class="btn btn-success sml nav-click log-button">Login</a>
-            <a class="btn btn-success sml nav-click log-button">Logout</a>
+            <% if !current_user.nil? %>
+              <li><a class="nav-click" href="/users/<%= current_user.id %>">My Profile</a></li>
+            <% end %>
+            <% if !logged_in? %>
+              <a href='/login' class="btn btn-success sml nav-click log-button">Login</a>
+            <% else %>
+              <a href='/logout' class="btn btn-success sml nav-click log-button" data-method='delete'>Logout</a>
+            <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
