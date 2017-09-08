@@ -10,8 +10,19 @@ State: <%= @user.state %>
   <%= render partial: "skills/form" %>
 <% end %>
 
+<h4>Friends</h4>
+<% @user.friends do |friend| %>
+  <p><%= friend.username %></p>
+<% end %>
+
 <br/>
 <h4>All Skills</h4>
 <%= render partial: "skills/skill", collection: @user.skills %>
+
+<% if Friendship.where("friend_id = ? OR user_id = ?", current_user.id, @user.id) %>
+	<%= link_to "Add Friend", new_user_friendship_path(@user) %>
+<% else %>
+	<p>Friend added!</p>
+<% end %>
 
 <small> <%= link_to "Edit", user_path(@user) %> </small>
