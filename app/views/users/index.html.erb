@@ -1,5 +1,47 @@
 <h1>All Users</h1>
+<div class="row index-row">
+  <% @users.each do |user| %>
+  <div class="col-md-2">
+    <div class="box-card">
+      <figure class="snip1174 navy">
+        <img class="profile-pic" src="<%= user.avatar_url %>" alt="sq-sample33" />
+        <figcaption>
+          <h2><%= user.username %> </h2>
+          <p>
+            "This is my Quote. <br>I really love to code.
+          </p>
+          <a href="/users/<%= user.id%>">My Profile</a>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+  <% end %>
+</div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class="row biggins">
 <% @users.each do |user| %>
-<%= link_to user.username, user_path(user) %><br>
+<div class="col-md-3 index-card-users">
+<div class="row">
+<div class="col-md-3">
+<%= image_tag user.avatar_url, class: 'index-avatar' %>
+</div>
+<div class="col-md-9">
+<h4><%= link_to user.username.capitalize, user_path(user) %></h4><br>
+</div>
+</div>
+</div>
 <% end %>
+</div> -->
