@@ -32,6 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'simple_form'
 gem 'chartkick'
 gem 'highcharts-rails'
+gem 'groupdate'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
