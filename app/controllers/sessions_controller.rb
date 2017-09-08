@@ -7,6 +7,9 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       flash[:message] = "Successful login"
+      if @user.role == 'admin'
+        flash[:message] = "You are an admin!"
+      end
       redirect_to user_path(@user)
     else
       flash[:message] = "Invalid"

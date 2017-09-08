@@ -5,8 +5,10 @@ Cover Letter: <%= @user.cover_letter %>
 City: <%= @user.city %>
 State: <%= @user.state %>
 
-<h4>Create a Skill</h4>
-<%= render partial: "skills/form" %>
+<% if @user.id == current_user.id %>
+  <h4>Create a Skill</h4>
+  <%= render partial: "skills/form" %>
+<% end %>
 
 <br/>
 <h4>All Skills for <strong><%= @user.username %></strong></h4>
