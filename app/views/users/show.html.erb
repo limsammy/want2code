@@ -22,14 +22,6 @@
     <h3 class="grey-back-header">All Skills</h3>
     <%= render partial: "skills/skill", collection: @user.skills %><br>
 
-
-  <div class="user">
-    <p>
-      <%= link_to "Add Friend", friendships_path(:friend_id => @user), :method => :post %>
-      <div class="clear"></div>
-    </p>
-  </div>
-
     <% if @user.id == current_user.id %>
     <h3 class="grey-back-header">Create a Skill</h3>
     <%= render partial: "skills/form" %>
@@ -44,6 +36,10 @@
   	(<%= link_to "remove", :friendship, :method => :delete %>)
   </li>
   <% end %>
+  <p>
+      <%= link_to "Add Friend", friendships_path(:friend_id => @user), :method => :post %>
+      <div class="clear"></div>
+    </p>
 </ul>
 
     <br/>
