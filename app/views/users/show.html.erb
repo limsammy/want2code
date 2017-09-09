@@ -22,23 +22,31 @@
     <h3 class="grey-back-header">All Skills</h3>
     <%= render partial: "skills/skill", collection: @user.skills %><br>
 
+
+  <div class="user">
+    <p>
+      <%= link_to "Add Friend", friendships_path(:friend_id => @user), :method => :post %>
+      <div class="clear"></div>
+    </p>
+  </div>
+
     <% if @user.id == current_user.id %>
     <h3 class="grey-back-header">Create a Skill</h3>
     <%= render partial: "skills/form" %>
     <% end %><br>
 
+
     <h3 class="grey-back-header">Friends</h3>
-    <% @user.friends do |friend| %>
-    <p><%= friend.username %></p>
-    <% end %>
+<ul>
+  <% for user in @user.friends %>
+  <li>
+  	<%= user.username %>
+  	(<%= link_to "remove", :friendship, :method => :delete %>)
+  </li>
+  <% end %>
+</ul>
 
     <br/>
-
-    <% if Friendship.where("friend_id = ? OR user_id = ?", current_user.id, @user.id) %>
-    <%= link_to "Add Friend", new_user_friendship_path(@user) %>
-    <% else %>
-    <p>Friend added!</p>
-    <% end %>
   </div>
   <div class="col-md-1">
   </div>
