@@ -4,31 +4,39 @@
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Welcome</h3>
+          <h2 class="panel-title">Welcome</h2>
         </div>
         <div class="panel-body">
-          BLAH BLAHBITY BLAH BLEH BLUH BLOBBY BLOB BLAH BLERT BLAGH BLAH BLAHBITY BLAH BLEH BLUMF BLOBBY BLOB BLAH BLAGH BLORB BLAH BLAHBITY BLAH BLEH BLOBBY BLOB BLOO BLAH BLAGH BLAH BLAHBITY BLAH BLOW BLEH BLOBBY BLOB BLAH BLING BLAGH BLAH BLAHBITY BLAH BLONDE BLEH BLOBBY BLOB BLECK BLAH BLAGH
+          <h4>Welcome to Want2Code. <br><br>We are a site for junior software developers and self-taught developers to gain exposure and build connections withother developers who are new to the software industry.<br><br> Thanks for visiting. We can't wait to meet you.</h4>
         </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Learn More About Us</h3>
-        </div>
-        <div class="panel-body">
-          BLAH BLAHBITY BLAH BLEH BLUH BLOBBY BLOB BLAH BLERT BLAGH BLAH BLAHBITY BLAH BLEH BLUMF BLOBBY BLOB BLAH BLAGH BLORB BLAH BLAHBITY BLAH BLEH BLOBBY BLOB BLOO BLAH BLAGH BLAH BLAHBITY BLAH BLOW BLEH BLOBBY BLOB BLAH BLING BLAGH BLAH BLAHBITY BLAH BLONDE BLEH BLOBBY BLOB BLECK BLAH BLAGH         </div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Login or Create Account</h3>
+          <h2 class="panel-title">Learn More About Us</h2>
         </div>
         <div class="panel-body">
-          BLAH BLAHBITY BLAH BLEH BLUH BLOBBY BLOB BLAH BLERT BLAGH BLAH BLAHBITY BLAH BLEH BLUMF BLOBBY BLOB BLAH BLAGH BLORB BLAH BLAHBITY BLAH BLEH BLOBBY BLOB BLOO BLAH BLAGH BLAH BLAHBITY BLAH BLOW BLEH BLOBBY BLOB BLAH BLING BLAGH BLAH BLAHBITY BLAH BLONDE BLEH BLOBBY BLOB BLECK BLAH BLAGH         </div>
+          <p>Want to know more about our mission and our inspiration? Check out what Want2Code is all about.</p>
+          <h3><%= link_to "About Want2Code", about_path %></h3>
+          <hr>
+          <p>Want to know more about the team members that are developing this community?</p>
+          <h3><%= link_to "About the Team", founders_path %></h3>
+        </div>
       </div>
     </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Login or Create Account</h2>
+        </div>
+        <div class="panel-body">
+          <p>Already a member?</p>
+          <h3><%= link_to "Login", login_path %></h3>
+          <hr>
+          <p>Want to join the community?</p>
+          <h3><%= link_to "Sign Up", new_user_path %></h3>
+        </div>
+      </div>
 
-  </div>
+    </div>

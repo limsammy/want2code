@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
 
   get '/about', to: 'home#about'
+  get '/founders', to: 'home#founders'
+
 
   delete '/logout',  to: 'sessions#destroy'
 end
