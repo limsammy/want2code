@@ -98,8 +98,19 @@ html {
 .grey-back-header {
   background-color: lightgray;
 }
-
-
+.center-text {
+  text-align: center;
+}
+.index-well {
+  margin: 10px;
+}
+.panel {
+  border-radius: 0px;
+}
+.panel-default>.panel-heading {
+  background-color: gray;
+  color: white;
+}
 
 
 

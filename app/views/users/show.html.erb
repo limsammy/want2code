@@ -7,6 +7,7 @@
     <p>Email: <%= @user.email %></p>
     <p>City: <%= @user.city %></p>
     <p>State: <%= @user.state %></p>
+    <small> <%= link_to "Edit Your Profile", edit_user_path(@user) %> </small>
 
   </div>
   <div class="col-md-4">
@@ -14,7 +15,7 @@
     <p><%= @user.about %></p>
     <h3 class="grey-back-header">Cover Letter: </h3>
     <p><%= @user.cover_letter %></p>
-    <small> <%= link_to "Edit", user_path(@user) %> </small>
+
   </div>
 
   <div class="col-md-3">
@@ -23,15 +24,9 @@
     <%= render partial: "skills/skill", collection: @user.skills %><br>
 
 
-  <div class="user">
-    <p>
-      <%= link_to "Add Friend", friendships_path(:friend_id => @user), :method => :post %>
-      <div class="clear"></div>
-    </p>
-  </div>
 
     <% if @user.id == current_user.id %>
-    <h3 class="grey-back-header">Create a Skill</h3>
+    <h3 class="grey-back-header">Add a Skill</h3>
     <%= render partial: "skills/form" %>
     <% end %><br>
 
@@ -40,10 +35,16 @@
 <ul>
   <% for user in @user.friends %>
   <li>
-  	<%= user.username %>
+  	<%= link_to user.username, user_path(user) %>
   	(<%= link_to "remove", :friendship, :method => :delete %>)
   </li>
   <% end %>
+  <div class="user">
+    <p>
+      <%= link_to "Add #{@user.username} to Friends", friendships_path(:friend_id => @user), :method => :post %>
+      <div class="clear"></div>
+    </p>
+  </div>
 </ul>
 
     <br/>
