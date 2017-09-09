@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @skill = @user.skills.new
-    @skills = @user.skills.all
+    @skills = @user.skills
   end
 
   def edit
