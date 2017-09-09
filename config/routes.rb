@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, only: [:new, :create, :show, :index, :destroy] do
+  resources :users, only: [:new, :create, :edit, :update, :show, :index, :destroy] do
     resources :skills, only: [:new, :create, :show]
   end
 
@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
 
   get '/about', to: 'home#about'
+  get '/founders', to: 'home#founders'
+
 
   delete '/logout',  to: 'sessions#destroy'
 end

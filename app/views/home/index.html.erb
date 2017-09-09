@@ -1,3 +1,42 @@
-<h1>Welcome To The Root Index </h1>
-</div>
+<div class="well index-well">
+  <div class="row">
 
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Welcome</h2>
+        </div>
+        <div class="panel-body">
+          <h4>Welcome to Want2Code. <br><br>We are a site for junior software developers and self-taught developers to gain exposure and build connections withother developers who are new to the software industry.<br><br> Thanks for visiting. We can't wait to meet you.</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Learn More About Us</h2>
+        </div>
+        <div class="panel-body">
+          <p>Want to know more about our mission and our inspiration? Check out what Want2Code is all about.</p>
+          <h3><%= link_to "About Want2Code", about_path %></h3>
+          <hr>
+          <p>Want to know more about the team members that are developing this community?</p>
+          <h3><%= link_to "About the Team", founders_path %></h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">Login or Create Account</h2>
+        </div>
+        <div class="panel-body">
+          <p>Already a member?</p>
+          <h3><%= link_to "Login", login_path %></h3>
+          <hr>
+          <p>Want to join the community?</p>
+          <h3><%= link_to "Sign Up", new_user_path %></h3>
+        </div>
+      </div>
+
+    </div>
