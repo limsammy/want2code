@@ -12,7 +12,17 @@
     </p>
     <h4>Recruiters / Hiring Managers:</h4>
     <p>Ugh venmo iPhone, migas bicycle rights gentrify meditation XOXO. Occupy butcher williamsburg, blue bottle skateboard sartorial hot chicken tilde shoreditch vaporware poke. Narwhal street art tacos cray seitan live-edge photo booth literally. Vexillologist mumblecore la croix chartreuse venmo. Pok pok cloud bread disrupt shaman next level. Plaid cliche iceland keytar man bun photo booth. La croix irony you probably haven't heard of them truffaut, photo booth hashtag poutine everyday carry chicharrones cliche enamel pin plaid lomo. Hella cloud bread you probably haven't heard of them pug pour-over heirloom 8-bit four dollar toast shoreditch poke flexitarian snackwave. Franzen church-key keffiyeh tumeric mumblecore hoodie, enamel pin tote bag pitchfork mlkshk post-ironic. Poke readymade PBRB pok pok helvetica semiotics pitchfork pug bespoke listicle. Fashion axe godard swag knausgaard raw denim poutine, disrupt hammock ramps messenger bag woke vaporware palo santo coloring book
-    </p><br>
-    <p><a href="#">About the Creators</a></p>
+    </p>
+    <h4>Site Data:</h4>
+    <p><div class="graph">
+      <h5>User Signup by Month</h5>
+        <%= line_chart User.group_by_month("users.created_at::date").count %>
+      </div>
+
+      <div class="graph">
+      <h5>Skill Creation by Month</h5>
+        <%= line_chart User.joins(:skills).group_by_month("skills.created_at::date").count %></p>
+      <br>
+      <p><a href="#">About the Creators</a></p>
   </div>
 </div>
