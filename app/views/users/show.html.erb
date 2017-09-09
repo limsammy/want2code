@@ -7,7 +7,9 @@
     <p>Email: <%= @user.email %></p>
     <p>City: <%= @user.city %></p>
     <p>State: <%= @user.state %></p>
-    <small> <%= link_to "Edit Your Profile", edit_user_path(@user) %> </small>
+    <% if current_user.id == @user.id %>
+    	<small> <%= link_to "Edit Your Profile", edit_user_path(@user) %> </small>
+    <% end %>
 
   </div>
   <div class="col-md-4">
