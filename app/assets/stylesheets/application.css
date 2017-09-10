@@ -43,6 +43,7 @@ html {
 }
 .navbar {
   border-radius: 0px;
+  background-color: #222f3d;
 }
 .about-pan {
   margin-left: 10px;
@@ -95,7 +96,8 @@ html {
   border-radius: 8px;
 }
 .grey-back-header {
-  background-color: lightgray;
+  background-color: #222f3d;
+  color: white;
 }
 .center-text {
   text-align: center;
@@ -107,7 +109,7 @@ html {
   border-radius: 0px;
 }
 .panel-default>.panel-heading {
-  background-color: gray;
+  background-color: #222f3d;
   color: white;
   border-radius: 0px;
 }
