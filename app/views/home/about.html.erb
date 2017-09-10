@@ -1,28 +1,47 @@
 <div class="panel panel-default about-pan">
   <div class="panel-heading about-heading">
     <div class="panel-title about-title">
-      <h1 class="about-header-text">About Want2Code</h1>
     </div>
   </div>
   <div class="panel-body">
-    <p>Want to Code is an application geared toward young coders and junior developers looking to find access to their first or second job in the software industry.</p> <br>
-    <p>With countless recruiting, job hunting and resume sites it is a difficult task for new developers to find a place to showcase their dev skills, business skills and what kind of team they're looking to work with. That's where Want2Code comes in. By allowing a somewhat exclusive community that is dedicated to developers who are in the early stages of their career, we allow better and simpler visibility for those idividuals looking to attract recruiters and hiring managers seeking to fill junior development, QA and dev team positions.</p><br>
+    <h4>The Basic Idea behind Want2Code:</h4>
+    <p>Want2Code is an application geared toward young coders and junior developers looking to find access to their first or second job in the software industry.</p>
+    <p>With countless recruiting, job hunting and resume sites it is a difficult task for new developers to find a place to showcase their dev skills, business skills and what kind of team they're looking to work with. That's where Want2Code comes in. By allowing a somewhat exclusive community that is dedicated to developers who are in the early stages of their career, we allow better and simpler visibility for those idividuals looking to attract recruiters and hiring managers seeking to fill junior development, QA and dev team positions.</p>
+    <p><a href="/founders">About the Founding Creators or Want2Code</a></p>
+    <hr>
     <h4>Developers:</h4>
-    <p>Occupy deep v keytar poutine, chartreuse jean shorts 90's vexillologist four loko austin meditation bitters bespoke pop-up. Photo booth normcore humblebrag dreamcatcher leggings, swag stumptown gastropub thundercats art party. Four loko etsy cloud bread dreamcatcher. Hell of XOXO freegan, poutine bespoke plaid everyday carry keytar hashtag food truck. Photo booth pok pok cardigan microdosing selvage edison bulb ethical readymade. Direct trade meditation pour-over irony taxidermy stumptown la croix lumbersexual. Enamel pin vexillologist mixtape, sustainable brunch mlkshk pop-up salvia PBRB man braid direct trade biodiesel wolf mustache. Godard PBRB before they sold out edison bulb kitsch. Vice kale chips air plant pickled roof party raclette, seitan schlitz la croix shoreditch tattooed.
+    <p>
+      This is a chance to showcase who you are, what you enjoy, skills you're proud of and what kind of a team you're looking to join. Without the stuffyness of typical recruiting or business networking sites, Want2Code gives you a simple place to be a part of the future of software development as an aspiring junior developer.
     </p>
+    <hr>
     <h4>Recruiters / Hiring Managers:</h4>
-    <p>Ugh venmo iPhone, migas bicycle rights gentrify meditation XOXO. Occupy butcher williamsburg, blue bottle skateboard sartorial hot chicken tilde shoreditch vaporware poke. Narwhal street art tacos cray seitan live-edge photo booth literally. Vexillologist mumblecore la croix chartreuse venmo. Pok pok cloud bread disrupt shaman next level. Plaid cliche iceland keytar man bun photo booth. La croix irony you probably haven't heard of them truffaut, photo booth hashtag poutine everyday carry chicharrones cliche enamel pin plaid lomo. Hella cloud bread you probably haven't heard of them pug pour-over heirloom 8-bit four dollar toast shoreditch poke flexitarian snackwave. Franzen church-key keffiyeh tumeric mumblecore hoodie, enamel pin tote bag pitchfork mlkshk post-ironic. Poke readymade PBRB pok pok helvetica semiotics pitchfork pug bespoke listicle. Fashion axe godard swag knausgaard raw denim poutine, disrupt hammock ramps messenger bag woke vaporware palo santo coloring book
+    <p>What if you didn't want to wade through complicated social networking searches and job sites to find someone who could satisfy the needs of your Junior Developer or QA position? This is the site for you. A simple collection of people with skills looking for an entry point to the market. You need them and they need you. This is a place where people can make a difference in eachothers lifes and companies. As a recruiter, other users will not know you as a potential hiring agent. You will be able to navigate the site at the same level as anyone else. This gives you the opportunity to find the firgt person or people for your available position without the pressure of candidates trying to initiate dialogue with you based on your title.
     </p>
-    <h4>Site Data:</h4>
-    <p><div class="graph">
-      <h5>User Signup by Month</h5>
-        <%= line_chart User.group_by_month("users.created_at::date").count %>
+    <hr>
+    <h4>Future Features in development:</h4>
+    <p>- Messaging: This would allow users to reach out to eachother and build relationships with coders just like them. It gives the ability to work on projects together and offer/give advice on subjects of shared interest. It will also allow recruiters to message people they may be interested in getting to know and potentially interview.</p>
+    <p>- More Coming: MORE FEATURES SOON TO BE REVEALED AND DEVELOPED.</p>
+    <p>- <strong>WANT TO HELP? If you have ideas and would like to contribute, please contact us. We would love to discuss potential contributions to this open source project!</strong></p>
+    <hr>
+    <h4>Site Data and Stats for Nerds:</h4>
+
+    <div class="row">
+
+      <div class="col-md-6">
+
+        <div class="graph">
+          <h5>User Signup by Month</h5>
+          <%= line_chart User.group_by_month("users.created_at::date").count %>
+        </div>
+      </div>
+      <div class="col-md-6">
+
+        <div class="graph">
+          <h5>Skill Creation by Month</h5>
+          <%= line_chart User.joins(:skills).group_by_month("skills.created_at::date").count %>
+        </div>
       </div>
 
-      <div class="graph">
-      <h5>Skill Creation by Month</h5>
-        <%= line_chart User.joins(:skills).group_by_month("skills.created_at::date").count %></p>
-      <br>
-      <p><a href="/founders">About the Creators</a></p>
+
+    </div>
   </div>
-</div>

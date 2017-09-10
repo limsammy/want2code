@@ -47,12 +47,13 @@ html {
   margin-bottom: 0px;
 }
 .about-pan {
+  margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
 }
 .about-title {
   height: 90px;
-  opacity: 0.8;
+  /*opacity: 0.8;*/
   background-image: url(http://i.imgur.com/563aSGJ.jpg);
   background-size: cover;
 }
@@ -60,13 +61,13 @@ html {
   padding: 0px;
 }
 .about-header-text {
-  /*text-align: center;*/
+  text-align: center;
   color: white;
   font-weight: bolder;
   font-size: 50px;
   margin-top: 0px;
   margin-left: 10px;
-  text-shadow: -3px 3px #000000
+  text-shadow: 4px 3px #000000,-1px 3px #000000;
   padding-top: 10px;
 }
 .index-avatar {
