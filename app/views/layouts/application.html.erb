@@ -40,7 +40,9 @@
     </nav>
   </header>
   <% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, class: name %>
+  <div class="alert alert-info" role="alert">
+  <h3 class="alert-words"><%= content_tag :div, msg, class: name %></h3>
+</div>
   <% end %>
   <%= yield %>
 </body>
