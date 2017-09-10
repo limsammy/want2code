@@ -21,7 +21,7 @@ html {
   font-size: 30px;
 }
 .message {
-  color: red;
+  color: #222f3d ;
 }
 .brand-icon {
   padding-top: 3px;
@@ -44,6 +44,7 @@ html {
 .navbar {
   border-radius: 0px;
   background-color: #222f3d;
+  margin-bottom: 0px;
 }
 .about-pan {
   margin-left: 10px;
@@ -119,6 +120,14 @@ html {
 .founder-header {
   font-size: 26px;
   text-align: center;
+}
+.alert {
+  text-align: center;
+  padding: 0px;
+  margin-bottom: 0px;
+}
+.alert-words {
+  margin: 0px;
 }
 
 
