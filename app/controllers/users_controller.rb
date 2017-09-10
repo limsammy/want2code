@@ -16,9 +16,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:message] = "#{@user.username}'s profile has been created"
+      flash[:message] = "#{@user.username} has been created. Don't forget to add some skills!"
       @user.skills.create
-      redirect_to new_user_skill_path(@user)
+      redirect_to user_path(@user)
     else
       flash[:message] = "User Profile not created"
       redirect_to new_user_path
