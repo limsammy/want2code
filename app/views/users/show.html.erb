@@ -7,7 +7,9 @@
     <p>Email: <%= @user.email %></p>
     <p>City: <%= @user.city %></p>
     <p>State: <%= @user.state %></p>
-    <small> <%= link_to "Edit Your Profile", edit_user_path(@user) %> </small>
+    <% if current_user.id == @user.id %>
+    	<small> <%= link_to "Edit Your Profile", edit_user_path(@user) %> </small>
+    <% end %>
 
   </div>
   <div class="col-md-4">
@@ -23,7 +25,6 @@
     <h3 class="grey-back-header">All Skills</h3>
     <%= render partial: "skills/skill", collection: @user.skills %><br>
 
-
     <% if @user.id == current_user.id %>
     <h3 class="grey-back-header">Add a Skill</h3>
     <%= render partial: "skills/form" %>
@@ -38,6 +39,7 @@
   	(<%= link_to "remove", :friendship, :method => :delete %>)
   </li>
   <% end %>
+
   <div class="user">
     <p>
       <%= link_to "Add #{@user.username} to Friends", friendships_path(:friend_id => @user), :method => :post %>
