@@ -23,6 +23,6 @@
       <h5>Skill Creation by Month</h5>
         <%= line_chart User.joins(:skills).group_by_month("skills.created_at::date").count %></p>
       <br>
-      <p><a href="#">About the Creators</a></p>
+      <p><a href="/founders">About the Creators</a></p>
   </div>
 </div>
