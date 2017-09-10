@@ -1,15 +1,28 @@
-<h1>Log in</h1>
 
-  <%= form_for(:session, url: login_path) do |f| %>
+<div class="row">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-3">
+    <h1>Welcome Back!</h1>
+    <%= form_for(:session, url: login_path) do |f| %>
 
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= f.label :email %><br>
+    <%= f.email_field :email %><br>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
+    <%= f.label :password %><br>
+    <%= f.password_field :password %><br>
+    <br>
     <%= f.submit "Log in" %>
-  <% end %>
+    <% end %>
+  </div>
+  <div class="col-md-3">
+    <h1>Not Registered?</h1>
+    <p>Join other coders just like you and build your profile in minutes. Explore other users with similar skills and start making contacts and friends today.</p>
+    <p>We're very excited that you're here.</p>
+    <h4><%= link_to "Click to Create Account", new_user_path %></h4>
+  </div>
 
-  <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+
+
+
 </div>
