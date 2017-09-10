@@ -7,11 +7,6 @@ Cover Letter: <%= @user.cover_letter %>
 City: <%= @user.city %>
 State: <%= @user.state %>
 
-<h4>Friends</h4>
-<% @user.friends do |friend| %>
-  <p><%= friend.username %></p>
-<% end %>
-
 <h4>Create a Skill</h4>
 <%= render partial: "skills/form" %>
 
