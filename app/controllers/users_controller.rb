@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     if logged_in?
       @users = User.all
     else
-      redirect_to new_user_path
+      redirect_to '/login'
       flash[:message] = "Please log in."
     end
   end
