@@ -4,6 +4,13 @@
   <div class="col-md-5">
 
     <%= form_for @user do |f| %>
+
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %><br>
+
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %><br>
+
     <%= f.label :username %><br>
     <%= f.text_field :username %><br>
 
@@ -27,6 +34,9 @@
 
     <%= f.label :state %><br>
     <%= f.text_field :state %><br>
+
+    <%= f.label :quote %>
+    <%= f.text_field :quote %>
 
     <%= f.submit %><br>
     <% end %>
