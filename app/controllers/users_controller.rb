@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    if logged_in?
+      @users = User.all
+    else
+      redirect_to new_user_path
+      flash[:message] = "Please log in."
+    end
   end
 
   def new
