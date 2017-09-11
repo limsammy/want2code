@@ -7,10 +7,10 @@
     <p>Email: <%= @user.email %></p>
     <p>City: <%= @user.city %></p>
     <p>State: <%= @user.state %></p>
-    <% if @user.linkedin %>
+    <% if @user.linkedin != ("" || nil) %>
     <p><a href="<%= @user.linkedin %>">LinkedIn Profile </a></p>
     <% end %>
-    <% if @user.github %>
+    <% if @user.github != ("" || nil) %>
     <p><a href="<%= @user.github %>">GitHub Profile </a></p>
     <% end %>
     <% if current_user.id == @user.id %>
