@@ -54,7 +54,7 @@ html {
 .about-title {
   height: 90px;
   /*opacity: 0.8;*/
-  background-image: url(http://i.imgur.com/563aSGJ.jpg);
+  background-color: #222f3d;
   background-size: cover;
 }
 .about-heading {
@@ -67,7 +67,6 @@ html {
   font-size: 50px;
   margin-top: 0px;
   margin-left: 10px;
-  text-shadow: 4px 3px #000000,-1px 3px #000000;
   padding-top: 10px;
 }
 .index-avatar {
@@ -130,7 +129,9 @@ html {
 .alert-words {
   margin: 0px;
 }
-
+.skill {
+  margin-bottom: 0px;
+}
 
 
 
