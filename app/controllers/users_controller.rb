@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     if logged_in?
       @users = User.all
     else
-      redirect_to new_user_path
+      redirect_to '/login'
       flash[:message] = "Please log in."
     end
   end
@@ -50,6 +50,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :avatar_url, :email, :about, :cover_letter, :city, :state, :quote, :first_name, :last_name)
+    params.require(:user).permit(:username, :password, :avatar_url, :email, :about, :cover_letter, :city, :state, :quote, :first_name, :last_name, :github, :linkedin)
   end
 end

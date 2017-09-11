@@ -2,7 +2,7 @@
   <div class="col-md-1">
   </div>
   <div class="col-md-5">
-
+<h2>Required:</h2>
     <%= form_for @user do |f| %>
 
     <%= f.label :first_name %><br>
@@ -15,7 +15,7 @@
     <%= f.text_field :username %><br>
 
     <%= f.label :password %><br>
-    <%= f.password_field :password %><br>
+    <%= f.text_field :password %><br>
 
     <%= f.label :avatar_url %><br>
     <%= f.text_field :avatar_url %><br>
@@ -23,25 +23,34 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %><br>
 
-    <%= f.label :about %><br>
-    <%= f.text_area :about %><br>
-
-    <%= f.label :cover_letter %><br>
-    <%= f.text_area :cover_letter %><br>
-
     <%= f.label :city %><br>
     <%= f.text_field :city %><br>
 
     <%= f.label :state %><br>
     <%= f.text_field :state %><br>
 
-    <%= f.label :quote %><br>
+
+
+  </div>
+  <div class="col-md-5">
+    <br><br>
+    <%= f.label :about_you %><br>
+    <%= f.text_area :about %><br>
+
+    <%= f.label :short_cover_letter %><br>
+    <%= f.text_area :cover_letter %><br>
+    <h2>Optional:</h2>
+    <%= f.label :short_personal_quote %><br>
     <%= f.text_field :quote %><br>
+
+    <%= f.label :linkedin_url %><br>
+    <%= f.text_field :linkedin %><br>
+
+    <%= f.label :github_url %><br>
+    <%= f.text_field :github %><br><br>
 
     <%= f.submit %><br>
     <% end %>
-  </div>
-  <div class="col-md-5">
   </div>
   <div class="col-md-1">
   </div>

@@ -7,8 +7,14 @@
     <p>Email: <%= @user.email %></p>
     <p>City: <%= @user.city %></p>
     <p>State: <%= @user.state %></p>
+    <% if @user.linkedin %>
+    <p><a href="<%= @user.linkedin %>">LinkedIn Profile </a></p>
+    <% end %>
+    <% if @user.github %>
+    <p><a href="<%= @user.github %>">GitHub Profile </a></p>
+    <% end %>
     <% if current_user.id == @user.id %>
-    	<small> <%= link_to "Edit Your Profile", edit_user_path(@user) %> </small>
+    <small> <%= link_to "Edit Your Profile", edit_user_path(@user) %> </small>
     <% end %>
 
   </div>
@@ -23,7 +29,14 @@
   <div class="col-md-3">
 
     <h3 class="grey-back-header">All Skills</h3>
-    <%= render partial: "skills/skill", collection: @user.skills %><br>
+    <!-- <%= render partial: "skills/skill", collection: @user.skills %><br> -->
+    <%# if @user.skills.count > 0 %>
+    <% @user.skills.each do |skill| %>
+    <% if skill.name.to_s.length > 0  %>
+    <p class="skill">Skill: <%= skill.name %></p>
+    <p class="skill">Level: <%= skill.level %></p><br>
+    <% end %>
+    <% end %>
 
     <% if @user.id == current_user.id %>
     <h3 class="grey-back-header">Add a Skill</h3>
