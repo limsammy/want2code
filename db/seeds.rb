@@ -20,4 +20,4 @@ require 'faker'
 #   end
 # end
 
-User.create(username: 'admin', email: 'admin@admin.com', password: 'mmmk', avatar_url: Faker::Avatar.unique.image, about: 'admin', cover_letter: 'admin', role: 1)
+User.create(username: 'admin', email: 'admin@admin.com', password: 'mmmk', avatar_url: 'https://www.abeautifulsite.net/uploads/2014/08/bit-face.png', about: 'admin', cover_letter: 'admin', role: 1)
